@@ -15,7 +15,7 @@ def argument():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--digits", type=lambda n: ((1<=int(n)) and int(n)) or False, metavar="[1~...]", default=3, help="桁数")
     parser.add_argument("-p", "--duplicate", action="store_true", help="正解となる数字の重複を許可(正解に121, 111等の数字も含まれるようになる)")
-    parser.add_argument("-i", "--include-zero", action="store_true", help="正解となる数字に0を含める")
+    parser.add_argument("-i", "--include-zero", action="store_true", help="正解となる数字に0も含めることを許可(必ず入るわけではない)")
     return parser.parse_args()
 
 def main():
