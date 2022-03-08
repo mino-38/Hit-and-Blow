@@ -2,9 +2,9 @@ import random
 import sys
 import argparse
 
-def generate(n, zero):
+def generate(n, duplicate, zero):
     num = str(random.randint(10**(n-1), 10**n))
-    while not appropriate(num, zero):
+    while not duplicate and not appropriate(num, zero):
         num = str(random.randint(10**(n-1), 10**n))
     return num
 
@@ -20,7 +20,7 @@ def argument():
 
 def main():
     args = argument()
-    answer = generate(args.digits, args.include_zero)
+    answer = generate(args.digits, args.duplicate, args.include_zero)
     count = 0
     while True:
         count += 1
