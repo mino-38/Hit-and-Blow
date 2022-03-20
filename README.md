@@ -20,5 +20,5 @@ hab("H"it-"a"nd-"B"low)コマンドを実行すると遊べます
 ## -i, --include-zero
 答えとなる数字に0も含まれるようにします(必ず含まれるというわけではないです)
 
-# Finally
+# Lastly
 Hit-and-Blowをどうぞ楽しんでください！
