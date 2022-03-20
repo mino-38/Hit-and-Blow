@@ -20,6 +20,8 @@ def argument():
 
 def main():
     args = argument()
+    if (9 if args.include_zero else 10) < args.digits and not args.duplicate:
+        raise ValueError("重複不可能かつ桁数が大きすぎるから正解の数字が生成出来ません")
     answer = generate(args.digits, args.duplicate, args.include_zero)
     count = 0
     while True:
