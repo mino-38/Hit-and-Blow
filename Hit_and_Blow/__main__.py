@@ -13,7 +13,7 @@ def appropriate(num, zero):
 
 def argument():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--digits", type=lambda n: ((1<=int(n)) and int(n)) or False, metavar="[1~...]", default=3, help="桁数")
+    parser.add_argument("-d", "--digits", type=lambda n: ((1<=int(n)) and int(n)) or False, metavar="[1~...]", default=3, help="正解となる数字の桁数")
     parser.add_argument("-p", "--duplicate", action="store_true", help="正解となる数字の重複を許可(正解に121, 111等の数字も含まれるようになる)")
     parser.add_argument("-i", "--include-zero", action="store_true", help="正解となる数字に0も含めることを許可(必ず入るわけではない)")
     return parser.parse_args()
@@ -21,7 +21,7 @@ def argument():
 def main():
     args = argument()
     if (10 if args.include_zero else 9) < args.digits and not args.duplicate:
-        raise ValueError("重複不可能かつ桁数が大きすぎるから正解の数字が生成出来ません")
+        raise ValueError("重複不可かつ指定された桁数が大きすぎるから正解となる数字が生成出来ません")
     answer = generate(args.digits, args.duplicate, args.include_zero)
     count = 0
     while True:
